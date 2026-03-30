@@ -75,7 +75,7 @@ class ProjectServiceTest {
         project.setDescription("Test project");
         project.setStartDate(LocalDate.of(2025, 1, 15));
         project.setEndDate(LocalDate.of(2025, 3, 15));
-        project.setStatus(ProjectStatus.accepted);
+        project.setStatus(ProjectStatus.ACCEPTED);
         project.setOverallScore(new BigDecimal("4.2"));
         project.setStackRank(1);
     }
@@ -124,7 +124,7 @@ class ProjectServiceTest {
                 "New Project", "Description", "Business need", "John Sponsor",
                 new BigDecimal("100000"),
                 LocalDate.of(2025, 2, 1), LocalDate.of(2025, 3, 15),
-                new BigDecimal("4.0"), 2, ProjectStatus.strategic,
+                new BigDecimal("4.0"), 2, ProjectStatus.STRATEGIC,
                 new ProjectRatingsDto(4, 5, 3, 4, 5),
                 List.of(new StaffingNeedDto(null, "Backend Developer", 2, 8))
         );
@@ -140,7 +140,7 @@ class ProjectServiceTest {
         ProjectResponse result = projectService.createProject(phaseId, request);
 
         assertThat(result.name()).isEqualTo("New Project");
-        assertThat(result.status()).isEqualTo(ProjectStatus.strategic);
+        assertThat(result.status()).isEqualTo(ProjectStatus.STRATEGIC);
     }
 
     @Test
@@ -192,7 +192,7 @@ class ProjectServiceTest {
         ProjectRequest request = new ProjectRequest(
                 "Updated Project", "Updated description", null, null, null,
                 LocalDate.of(2025, 1, 20), LocalDate.of(2025, 3, 20),
-                new BigDecimal("4.5"), 1, ProjectStatus.accepted,
+                new BigDecimal("4.5"), 1, ProjectStatus.ACCEPTED,
                 null, null
         );
 

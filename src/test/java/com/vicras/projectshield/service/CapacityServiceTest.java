@@ -172,7 +172,7 @@ class CapacityServiceTest {
         project.setOverallScore(score);
         project.setStartDate(LocalDate.of(2025, 1, 1));
         project.setEndDate(LocalDate.of(2025, 3, 31));
-        project.setStatus(ProjectStatus.accepted);
+        project.setStatus(ProjectStatus.ACCEPTED);
         return project;
     }
 

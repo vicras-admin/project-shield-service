@@ -50,7 +50,7 @@ public class Project {
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private ProjectStatus status = ProjectStatus.accepted;
+    private ProjectStatus status = ProjectStatus.ACCEPTED;
 
     @Embedded
     private ProjectRatings ratings = new ProjectRatings();

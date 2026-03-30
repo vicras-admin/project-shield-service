@@ -115,7 +115,7 @@ public class ProjectService {
         project.setEndDate(request.endDate());
         project.setOverallScore(request.overallScore());
         project.setStackRank(request.stackRank());
-        project.setStatus(request.status() != null ? request.status() : ProjectStatus.accepted);
+        project.setStatus(request.status() != null ? request.status() : ProjectStatus.ACCEPTED);
 
         if (request.ratings() != null) {
             ProjectRatings ratings = project.getRatings();

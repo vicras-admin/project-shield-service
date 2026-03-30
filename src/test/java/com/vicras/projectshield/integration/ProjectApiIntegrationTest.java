@@ -90,7 +90,7 @@ class ProjectApiIntegrationTest extends BaseIntegrationTest {
                 .statusCode(201)
                 .body("id", notNullValue())
                 .body("name", equalTo("Claims Modernization"))
-                .body("status", equalTo("strategic"))
+                .body("status", equalTo("STRATEGIC"))
                 .body("overallScore", equalTo(4.2f))
                 .body("ratings.strategicAlignment", equalTo(5))
                 .body("staffingNeeds", hasSize(2));
@@ -299,7 +299,7 @@ class ProjectApiIntegrationTest extends BaseIntegrationTest {
 
     @Test
     void createProject_allStatuses_areValid() {
-        String[] statuses = {"accepted", "strategic", "rejected"};
+        String[] statuses = {"ACCEPTED", "STRATEGIC", "REJECTED"};
 
         for (int i = 0; i < statuses.length; i++) {
             String requestBody = String.format("""
